@@ -3,10 +3,11 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig, loadEnv} from 'vite';
 
-  export default defineConfig(({mode}) => {
+export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   return {
-    base: '/pucmmcar/',
+    // 🌍 Ruta relativa './' para que funcione en cualquier servidor (Vercel, GitHub, etc.)
+    base: './', 
     plugins: [react(), tailwindcss()],
     define: {
     },
